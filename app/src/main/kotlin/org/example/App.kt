@@ -4,12 +4,26 @@
 package org.example
 
 
-fun nombre_fecha (){
-    println("juan rodriguez")
-    println("22/04/25")}
-
+fun mostrarTiposDeDatos() {
+    val nombre: String = "Juan"
+    val edad: Int = 25
+    val altura: Double = 1.75
+    val esEstudiante: Boolean = true
+    
+    println("Nombre: $nombre")
+    println("Edad: $edad")
+    println("Altura: $altura")
+    println("Es estudiante: $esEstudiante")
+}
+fun area_rectangulo () {
+    val base : Double = 10.3
+    val alturaR : Double = 3.7
+    val area = base * alturaR
+    println ("El area del rectangulo es : $area")
+}
 fun main() {
     println("hola kotlin")
-    nombre_fecha()
+    mostrarTiposDeDatos()
+    area_rectangulo()
 
 }
