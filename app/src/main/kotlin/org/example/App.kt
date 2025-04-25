@@ -14,6 +14,9 @@ fun menos_mas(numero: Int): String {
         numero < 0 -> "El número es negativo."
         else -> "El número es cero."
     }
+
+
+
 }
 fun mostrarNumerosConLoops() {
     // Usando for
@@ -62,6 +65,23 @@ fun mostrarNumerosParesConLoops() {
     } while (k <= 20)
 }
 
+
+fun factorial(n: Int): Int {
+    return if (n <= 1) 1 else n * factorial(n - 1)
+}
+
+fun saludar(nombre: String, edad: Int = 0) {
+    println("Hola $nombre, tienes $edad años")
+}
+
+fun potencia(base: Int, exponente: Int): Int {
+    var resultado = 1
+    for (i in 1..exponente) {
+        resultado *= base
+    }
+    return resultado
+}
+
 fun main() {
     println("Hola Kotlin")
     
@@ -80,6 +100,14 @@ fun main() {
 
     mostrarNumerosConLoops()
     mostrarNumerosParesConLoops()
+
+        val base = 2
+    val exponente = 5
+    val resultado = potencia(base, exponente)
+
+    println("$base elevado a $exponente es $resultado")
+
+
 }
 
 
