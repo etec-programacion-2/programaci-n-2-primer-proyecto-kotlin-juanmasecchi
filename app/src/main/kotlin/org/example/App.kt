@@ -4,26 +4,33 @@
 package org.example
 
 
-fun mostrarTiposDeDatos() {
-    val nombre: String = "Juan"
-    val edad: Int = 25
-    val altura: Double = 1.75
-    val esEstudiante: Boolean = true
-    
-    println("Nombre: $nombre")
-    println("Edad: $edad")
-    println("Altura: $altura")
-    println("Es estudiante: $esEstudiante")
+fun esParOImpar(numero: Int): String {
+    return if (numero % 2 == 0) "Par" else "Impar"
 }
-fun area_rectangulo () {
-    val base : Double = 10.3
-    val alturaR : Double = 3.7
-    val area = base * alturaR
-    println ("El area del rectangulo es : $area")
-}
-fun main() {
-    println("hola kotlin")
-    mostrarTiposDeDatos()
-    area_rectangulo()
 
+fun menos_mas(numero: Int): String {
+    return when {
+        numero > 0 -> "El número es positivo."
+        numero < 0 -> "El número es negativo."
+        else -> "El número es cero."
+    }
 }
+
+fun main() {
+    println("Hola Kotlin")
+    
+    // Ejemplo de uso de las funciones
+    val numero1 = 5
+    val numero2 = -3
+    val numero3 = 0
+    
+    println("Número $numero1: ${esParOImpar(numero1)}")
+    println("Número $numero2: ${esParOImpar(numero2)}")
+    println("Número $numero3: ${esParOImpar(numero3)}")
+    
+    println(menos_mas(numero1))  // Imprime "El número es positivo."
+    println(menos_mas(numero2))  // Imprime "El número es negativo."
+    println(menos_mas(numero3))  // Imprime "El número es cero."
+}
+
+
