@@ -15,11 +15,57 @@ fun menos_mas(numero: Int): String {
         else -> "El número es cero."
     }
 }
+fun mostrarNumerosConLoops() {
+    // Usando for
+    println("Usando for:")
+    for (i in 1..10) {
+        println(i)
+    }
+    
+    // Usando while
+    println("\nUsando while:")
+    var j = 1
+    while (j <= 10) {
+        println(j)
+        j++
+    }
+    
+    // Usando do-while
+    println("\nUsando do-while:")
+    var k = 1
+    do {
+        println(k)
+        k++
+    } while (k <= 10)
+}
+fun mostrarNumerosParesConLoops() {
+    // Usando for
+    println("Usando for:")
+    for (i in 2..20 step 2) {
+        println(i)
+    }
+    
+    // Usando while
+    println("\nUsando while:")
+    var j = 2
+    while (j <= 20) {
+        println(j)
+        j += 2
+    }
+    
+    // Usando do-while
+    println("\nUsando do-while:")
+    var k = 2
+    do {
+        println(k)
+        k += 2
+    } while (k <= 20)
+}
 
 fun main() {
     println("Hola Kotlin")
     
-    // Ejemplo de uso de las funciones
+   
     val numero1 = 5
     val numero2 = -3
     val numero3 = 0
@@ -28,9 +74,12 @@ fun main() {
     println("Número $numero2: ${esParOImpar(numero2)}")
     println("Número $numero3: ${esParOImpar(numero3)}")
     
-    println(menos_mas(numero1))  // Imprime "El número es positivo."
-    println(menos_mas(numero2))  // Imprime "El número es negativo."
-    println(menos_mas(numero3))  // Imprime "El número es cero."
+    println(menos_mas(numero1))  
+    println(menos_mas(numero2))  
+    println(menos_mas(numero3))  
+
+    mostrarNumerosConLoops()
+    mostrarNumerosParesConLoops()
 }
 
 
