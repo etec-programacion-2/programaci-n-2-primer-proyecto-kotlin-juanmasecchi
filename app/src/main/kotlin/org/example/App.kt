@@ -14,26 +14,21 @@ fun menos_mas(numero: Int): String {
         numero < 0 -> "El número es negativo."
         else -> "El número es cero."
     }
-
-
-
 }
+
 fun mostrarNumerosConLoops() {
-    // Usando for
     println("Usando for:")
     for (i in 1..10) {
         println(i)
     }
-    
-    // Usando while
+
     println("\nUsando while:")
     var j = 1
     while (j <= 10) {
         println(j)
         j++
     }
-    
-    // Usando do-while
+
     println("\nUsando do-while:")
     var k = 1
     do {
@@ -41,22 +36,20 @@ fun mostrarNumerosConLoops() {
         k++
     } while (k <= 10)
 }
+
 fun mostrarNumerosParesConLoops() {
-    // Usando for
     println("Usando for:")
     for (i in 2..20 step 2) {
         println(i)
     }
-    
-    // Usando while
+
     println("\nUsando while:")
     var j = 2
     while (j <= 20) {
         println(j)
         j += 2
     }
-    
-    // Usando do-while
+
     println("\nUsando do-while:")
     var k = 2
     do {
@@ -64,7 +57,6 @@ fun mostrarNumerosParesConLoops() {
         k += 2
     } while (k <= 20)
 }
-
 
 fun factorial(n: Int): Int {
     return if (n <= 1) 1 else n * factorial(n - 1)
@@ -82,32 +74,86 @@ fun potencia(base: Int, exponente: Int): Int {
     return resultado
 }
 
+fun encontrarMayorYMenor(numeros: List<Int>) {
+    if (numeros.isEmpty()) {
+        println("La lista está vacía.")
+        return
+    }
+
+    var mayor = numeros[0]
+    var menor = numeros[0]
+
+    for (numero in numeros) {
+        if (numero > mayor) {
+            mayor = numero
+        }
+        if (numero < menor) {
+            menor = numero
+        }
+    }
+
+    println("El número más grande es: $mayor")
+    println("El número más pequeño es: $menor")
+}
+
+fun calcularPromedio(numeros: List<Int>): Double {
+    var suma = 0
+    var contador = 0
+
+    for (numero in numeros) {
+        suma += numero
+        contador++
+    }
+
+    return if (contador > 0) suma.toDouble() / contador else 0.0
+}
+
+fun demostrarAlcanceVariables() {
+    val variableGlobal = "Soy global en esta función"
+
+    if (true) {
+        val variableIf = "Soy local del if"
+        println("Dentro del if: $variableIf")
+        println("Puedo acceder a: $variableGlobal")
+    }
+
+    for (i in 1..3) {
+        val variableFor = "Soy local del for - iteración $i"
+        println("Dentro del for: $variableFor")
+        println("Puedo acceder a: $variableGlobal")
+    }
+
+    // println(variableIf) // Error si se descomenta
+    // println(variableFor) // Error si se descomenta
+}
+
 fun main() {
     println("Hola Kotlin")
-    
-   
+
     val numero1 = 5
     val numero2 = -3
     val numero3 = 0
-    
+
     println("Número $numero1: ${esParOImpar(numero1)}")
     println("Número $numero2: ${esParOImpar(numero2)}")
     println("Número $numero3: ${esParOImpar(numero3)}")
-    
-    println(menos_mas(numero1))  
-    println(menos_mas(numero2))  
-    println(menos_mas(numero3))  
+
+    println(menos_mas(numero1))
+    println(menos_mas(numero2))
+    println(menos_mas(numero3))
 
     mostrarNumerosConLoops()
     mostrarNumerosParesConLoops()
 
-        val base = 2
+    val base = 2
     val exponente = 5
     val resultado = potencia(base, exponente)
-
     println("$base elevado a $exponente es $resultado")
 
+    demostrarAlcanceVariables()
 
+    val lista = listOf(10, 5, 23, 8, 1)
+    println("Promedio: ${calcularPromedio(lista)}")
+
+    encontrarMayorYMenor(lista)
 }
-
-
